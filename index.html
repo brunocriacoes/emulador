@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./disc/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./disc/css/mobile.css" media="( max-width: 760px )" />
+</head>
+<body>
+
+    <div class="content">
+        <div id="simulador">
+            
+            <svg
+            width="100%"
+            viewBox="0 0 132.29166 132.29167"
+            version="1.1"
+            id="svg8"
+            inkscape:version="0.92.3 (2405546, 2018-03-11)"
+            sodipodi:docname="bateco.svg">
+            <defs
+            id="defs2">
+            <clipPath
+                clipPathUnits="userSpaceOnUse"
+                id="clipPath847">
+            <path
+                style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                d="m 12.895754,226.03993 c 0.334087,-3.87541 3.006783,-6.81538 10.22306,-6.34765 7.216276,0.46772 43.765384,0.66817 43.765384,0.66817 0,0 7.817636,0.86862 11.292139,-0.60136 3.474503,-1.46998 13.096203,-9.95579 18.441596,-11.42577 5.345387,-1.46998 14.432557,-0.93544 19.577497,4.27631 5.14494,5.21176 6.5481,10.15624 6.41446,14.63301 -0.13363,4.47676 -1.73725,13.8312 -10.69078,18.30796 -8.95353,4.47677 -17.3057,1.26953 -21.64883,-0.66817 -4.343128,-1.93771 -8.61944,-6.41447 -10.490327,-7.41673 -1.870885,-1.00226 -10.022607,-2.13816 -15.033911,-2.20498 -5.011304,-0.0668 -38.152724,-1.67043 -40.82542,-1.87088 -2.672695,-0.20045 -10.891233,1.13589 -11.024868,-7.34991 z"
+                id="path849"
+                inkscape:connector-curvature="0" />
+            </clipPath>
+            </defs>
+            
+            <g
+            inkscape:label="Camada 1"
+            inkscape:groupmode="layer"
+            id="layer1"
+            transform="translate(0,-164.70832)">
+            <image
+                xlink:href="disc/img/bateco.png"
+                transform="rotate(-1.7219117,205.83223,282.19612)"
+                clip-path="url(#clipPath847)"
+                width="131.15381"
+                height="131.68835"
+                preserveAspectRatio="none"
+                id="image820"
+                x="0.56892598"
+                y="165.00998" />
+            <path
+                style="mix-blend-mode: multiply;fill:#c00;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                d="m 11.295466,231.86274 c 0.217486,-3.8837 2.800633,-6.90265 10.027706,-6.65197 7.227073,0.25067 43.765699,-0.64722 43.765699,-0.64722 0,0 7.840207,0.63332 11.26897,-0.9404 3.428764,-1.57372 12.791136,-10.34481 18.089945,-11.97475 5.298803,-1.62994 14.397924,-1.36869 19.697154,3.6861 5.29922,5.05481 6.85032,9.9549 6.85126,14.43366 9.5e-4,4.47876 -1.32086,13.87716 -10.13583,18.62094 -8.81496,4.74378 -17.259732,1.78896 -21.659126,-0.0174 -4.399394,-1.80633 -8.808295,-6.15257 -10.708452,-7.09816 -1.900158,-0.94559 -10.082331,-1.83603 -15.09338,-1.75224 -5.011049,0.0838 -38.18569,-0.52324 -40.863201,-0.64329 -2.677513,-0.12005 -10.852185,1.46264 -11.240745,-7.01531 z"
+                id="sim-set"
+                inkscape:connector-curvature="0" />
+            <image
+                xlink:href="disc/img/logo.png"
+                transform="rotate(-1.7219117)"
+                width="28.63055"
+                height="28.63055"
+                preserveAspectRatio="none"
+                id="sim-preview-logo"
+                x="79.891273"
+                y="218.93488" />
+            </g>
+            </svg>
+            
+            <label for="sim-cor" class="sim-cor">C</label>
+            <input type="checkbox" id="sim-cor" name="sim-cor" hidden>
+            <div id="sim-cor-box">
+                <div id="sim-rabinho" ></div>
+                <label for="sim-cor" class="sim-ball" style="background: #C00" onclick="simSet( '#C00' )"></label>
+                <label for="sim-cor" class="sim-ball" style="background: #05f" onclick="simSet( '#05f' )"></label>
+                <label for="sim-cor" class="sim-ball" style="background: #0f0" onclick="simSet( '#0f0' )"></label>
+            </div>
+            <label for="sim-logo" class="sim-logo">L</label>
+            <input type="file" id="sim-logo" name="sim-logo" onchange="getLogo()" hidden>
+            <label for="sim-filtros" class="sim-btn sim-filtros">F</label>
+            <input type="checkbox" id="sim-filtros" hidden>
+            <div id="sim-filtros-box">
+                <div></div>
+                <span onclick="fiutro('invert')">I</span>
+                <span onclick="fiutro('gray')">PB</span>
+                <span onclick="blend('multiply')">M</span>
+                <span onclick="blend('screen')">S</span>
+                <span onclick="cancelFiltros()">x</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./disc/js/main.js"></script>
+</body>
+</html>
